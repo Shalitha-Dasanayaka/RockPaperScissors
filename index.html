@@ -5,11 +5,45 @@
         <meta charset="UTF-8">
         <script>
 
-            function getComputerChoice(){
-                var words = ['Rock', 'Paper', 'Scissor']
-                const random = Math.floor(Math.random() * words.length);
-                console.log(random, words[random]);
-            }getComputerChoice();
+           function game(playerSelection, computerSelection){
+                var playerSelection = prompt("Rock, Paper or scissors?: ")
+                var userInput = playerSelection;
+
+                var computerSelection = ['Rock', 'Paper', 'Scissor'];
+                var randomIndex = Math.floor(Math.random() * computerSelection.length); 
+                var randomElement = computerSelection[randomIndex];
+
+                //rock
+                if(userInput === randomElement){
+                    console.log("it's a Tie");
+                }else if(userInput === "Rock" && randomElement === "Scissor"){
+                    console.log("Congratulations! You won. Rock beats scissor");
+                }else if(userInput === "Rock" && randomElement === "Paper"){
+                    console.log("Oh you lost! paper beats Rock");
+                }else if(userInput === "Paper" && randomElement === "Rock"){
+                    console.log("Congratulations! You won. Paper beats Rock");
+                }else if(userInput === "Paper" && randomElement === "Scissor"){
+                    console.log("Oh you lost! Scissor beats Paper");
+                }else if(userInput === "Scissor" && randomElement === "Paper"){
+                    console.log("Congratulations! You won. Scissor beats Paper");
+                }else if(userInput === "Scissor" && randomElement === "Rock"){
+                    console.log("Oh you lost! Rock beats Scissor");
+                }else{
+                    console.log("wrong Input");
+                }
+
+                /*paper
+                if(userInput === randomElement){
+                    console.log("it's a Tie");
+                }
+
+                //scissor
+                if(userInput === randomElement){
+                    console.log("it's a Tie");
+                }*/
+           }game();
+            
+            
             
 
         </script>
